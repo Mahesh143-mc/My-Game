@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-main-container">
+
+        <div class="game-back">
+            <a href="index.html"><i class="fa-solid fa-arrow-left-long"></i></a>
+            <a href="">
+                <p>Back</p>
+            </a>
+        </div>
+
+        <div class="game-container">
+            <div class="inner-container">
+                <h1>Guess the <span>Number</span></h1>
+
+                <div id="start-game">
+                    <div class="num-col-1">
+                        <div class="player">
+                            <img src="Pictures/Game background-2.jpg" alt="">
+                            <h3>You</h3>
+                        </div>
+
+                        <h4>VS</h4>
+                        <div class="player">
+                            <img src="Pictures/Game background-3.jpg" alt="">
+                            <h3>System</h3>
+                        </div>
+                    </div>
+
+                    <div class="num-col-1 set-value">
+                        <h2>Set the Range of the number : </h2>
+                        <input type="number" value="5" id="get-range">
+                    </div>
+
+                    <div class="num-col-1 start-btn">
+                        <button class="btn" id="start-btn">Start</button>
+                        <p id="see-rules">See the rules</p>
+                        
+                    </div>
+                </div>
+
+                <div class="rules-container" id="rules-container" style="display: none;">
+                    <div class="game-rules">
+
+                        <h2>Game Rules</h2>
+                        <hr>
+                        <ul>
+                            <li>Totaly this game is have a 2 rounds.</li>
+                            <li>Each round have a 5 set.</li>
+                            <li>You have a win 3 set adding one points to your score.</li>
+                            <li>Must completed the two rounds.</li>
+                            <li>You have minimum wining two or one rounds.</li>
+                        </ul>
+                        
+                        <p id="rules-back"><i class="fa-solid fa-arrow-left-long"></i>  Back</p>
+                    </div>
+                </div>
+
+                <div class="user-playing" id="playing-game" style="display: none;" >
+                    <h5>Total Score : <span id="update-score"> 0</span></h5>
+                    <div class="num-col-1 round">
+                        <h3>Round : <span id="get-round">1 </span> <span> / 2</span></span></h3>
+                        <h3>Set : <span id="get-set">1 </span> <span>/ 5 </span></h3>
+                    </div>
+                    <div class="num-col-1 empty" >
+                        <input type="number" id="get-user" >
+                        <p id="empty-input"></p>
+                        <p id="num-gues"></p>
+                    </div>
+
+                    <div class="num-col-1 play-btn">
+                        <button class="btn" id="check-result">Sumbit</button>
+                        <a href="number.html"><button class="btn">Cancel</button></a>
+                    </div>
+
+                    <div class="num-col-1">
+                        <h4>Your Score : <span id="your-score"> 0</span></h4>
+                        <h4>Computer Score : <span id="computer-score"> 0</span></h4>
+                        <h4>Avaliable set : <span id="set-avalible">5</span></h4>
+                    </div>
+
+                    <div class="num-col-1 leave-game-p">
+                        <a href="number.html"><p>Leave the game</p></a>
+                    </div>
+                </div>
+
+                <div class="show-winning" id="winning-container" style="display: none;">
+                    <div class="win">
+                        <h2>Round : 1</h2>
+                        <img src="Pictures/User id.jpeg" width="100" height="100">
+                        <h2>You Win The First Round</h2>
+                        <h4>Your score is adding 1 point</h4>
+                        <br>
+                        <h4>Next round will start in : <span id="auto-play">10</span></h4>
+                    </div>
+                    <div class="win">
+                        <a href="number.html"><button class="btn" id="stop-game">Cancel</button></a>
+                    </div>
+                </div>
+
+                <div class="show-lose" id="lose-container" style="display: none;">
+                    <div class="lose">
+                        <h2>Round : 1</h2>
+                        <img src="Pictures/Computer img.jpg" width="100" height="100">
+                        <h2 class="small-font">You Loose The First Round</h2>
+                        <h4>No Wining Points</h4>
+                        <br>
+                        <h4>Next round will start in : <span id="auto-play2">10</span></h4>
+                    </div>
+                    <div class="lose">
+                        <a href="number.html"><button class="btn" id="stop-game">Cancel</button></a>
+                    </div>
+                </div>
+
+                <div class="win-game" id="win-match" style="display: none;">
+                    <div class="win-game-col">
+                        <h2>Congratulation</h2>
+                        <img src="Pictures/User id.jpeg">
+                        <h2>You Win The Match</h2>
+                        <br>
+                    </div>
+                    <div class="win-game-col win-btn">
+                        <a href=""><button class="btn">Play Again</button></a>
+                        <a href=""><button class="btn">Go to Home</button></a>
+                    </div>
+                </div>
+
+                <div class="lose-game" id="lose-match" style="display: none;">
+                    <div class="lose-game-col">
+                        <h2>Lose the match</h2>
+                        <img src="Pictures/Computer img.jpg" width="100" height="100">
+                        <h2 class="small-font-2">Sorry you lose the game.Play again</h2>
+                        <br>
+                    </div>
+                    <div class="lose-game-col lose-btn">
+                        <a href="number.html"><button class="btn">Play Again</button></a>
+                        <a href="index.html"><button class="btn">Go to Home</button></a>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+
+</html>
